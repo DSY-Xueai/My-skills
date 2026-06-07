@@ -1,6 +1,15 @@
-# DSY Skills
+#  DSY Skills
 
-可安装到 Codex、Claude Code 等 Agent 里的 Skill 集合。
+#### 可安装到 Codex、Claude Code 等 Agent 里的 Skill 集合。
+
+[![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
+
+![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97706?style=flat-square&logo=anthropic&logoColor=white)
+![Codex](https://img.shields.io/badge/Codex-Skill-10B981?style=flat-square&logo=openai&logoColor=white)
+![OpenCode](https://img.shields.io/badge/OpenCode-Skill-3B82F6?style=flat-square)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill-8B5CF6?style=flat-square)
+
+</div>
 
 ## Skills
 
