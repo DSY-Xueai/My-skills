@@ -29,7 +29,7 @@
 在 Codex、Claude Code 等支持 Skill 的 Agent 里，直接说：
 
 ```text
-帮我安装这个 skill：https://github.com/DSY-Xueai/DSY-skills/tree/main/VidGrab
+帮我安装这个 skill：https://github.com/DSY-Xueai/DSY-skills/tree/main/<skill_name>
 ```
 
 也可以手动 clone 后，把需要的 skill 目录复制到本地 skills 目录。
@@ -77,12 +77,6 @@ python -m pip install -U yt-dlp
 ```
 
 如果需要合并音视频或转码，主机还需要安装 `ffmpeg` 并加入 `PATH`。
-
-**文件入口**
-
-→ [SKILL.md](./VidGrab/SKILL.md) · [实现指南](./VidGrab/references/implementation-guide.md) · [平台表](./VidGrab/references/platforms.md) · [下载脚本](./VidGrab/scripts/video_downloader.py)
-
----
 
 <div align="center">
 
