@@ -1,0 +1,4 @@
+interface:
+  display_name: "VidGrab"
+  short_description: "Build video download features with yt-dlp, cookies, subtitles, and JSON results."
+  default_prompt: "Use $vidgrab to implement or repair a video download feature."

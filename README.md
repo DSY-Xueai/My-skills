@@ -2,7 +2,7 @@
 
 # DSY Skills
 
-#### 我自己沉淀的一些 AI Skill，统一放在这里
+#### AI Agent 可直接加载的实用 Skill
 
 [![Skills](https://img.shields.io/badge/Skills-1-10B981?style=for-the-badge)](#-skills)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-8B5CF6?style=for-the-badge)](https://agentskills.io)
@@ -12,7 +12,7 @@
 
 </div>
 
-这里的每个 Skill 都是 Agent 可以直接加载的结构化指令集。目标很简单：把已经跑通、可复用的做事方法沉淀下来，下次让 Agent 少走弯路。
+这里收集的是可直接安装到 Codex、Claude Code 等 Agent 里的 Skill。每个 Skill 都只保留完成任务所需的指令、脚本和参考资料。
 
 ---
 
@@ -20,7 +20,7 @@
 
 | 名字 | 一句话 |
 | --- | --- |
-| [**vide-download-project**](#vide-download-project) | 把视频下载能力迁移到其他项目：yt-dlp、平台识别、cookies.txt、JSON 结果和错误分类 |
+| [**VidGrab**](#vidgrab) | 帮 Agent 实现、接入或修复视频下载功能 |
 
 ---
 
@@ -29,7 +29,7 @@
 在 Codex、Claude Code 等支持 Skill 的 Agent 里，直接说：
 
 ```text
-帮我安装这个 skill：https://github.com/DSY-Xueai/DSY-skills/tree/main/vide-download-project
+帮我安装这个 skill：https://github.com/DSY-Xueai/DSY-skills/tree/main/VidGrab
 ```
 
 也可以手动 clone 后，把需要的 skill 目录复制到本地 skills 目录。
@@ -38,33 +38,35 @@
 
 ## Skills
 
-### vide-download-project
+### VidGrab
 
-> 把 Vide Download 项目里已经沉淀好的下载边界，复用到新的代码库里。
+> 让 Agent 能稳定处理视频下载相关开发任务。
 
-这个 Skill 适合在新项目里实现、迁移或修复视频下载能力。它不追求做完整应用，只抽取核心下载域：URL 平台识别、可选 cookies.txt、yt-dlp 下载参数、字幕处理、标准 JSON 返回值和稳定错误码。
+VidGrab 用于实现、接入或修复视频下载功能。它提供一个清晰的下载器约定，并附带可复用的 Python 脚本，适合需要 `yt-dlp`、平台识别、登录 cookies、字幕处理和结构化返回结果的项目。
 
 **它能做什么**
 
-- 根据 URL hostname 或强制平台参数识别平台。
-- 使用 yt-dlp 下载单个视频，避免误展开 playlist。
-- 优先输出 1080p 以内、兼容性更好的 H.264/AAC MP4。
-- 支持调用方传入自己的 `cookies.txt`，不内置任何真实 cookies。
-- 将登录、风控、cookie 过期等问题归类成稳定错误码，方便上层 UI 或 API 处理。
-- 提供可直接复用的 Python downloader 脚本和测试。
+- 识别 YouTube、Bilibili、抖音、小红书、微博、X/Twitter 等常见视频平台。
+- 使用 `yt-dlp` 下载单个视频，并避免误下载整个播放列表。
+- 优先生成兼容性更好的 MP4 文件，适配常见播放器。
+- 下载可用字幕，转换为 SRT，并在条件允许时嵌入 MP4。
+- 支持调用方传入自己的 `cookies.txt`，用于登录或风控场景。
+- 返回统一 JSON 结果，包含状态、文件路径、错误码和警告信息。
+- 将登录失效、平台拦截、超时、系统错误等失败原因归类，方便上层处理。
 
 **适合**
 
-- 给已有 App 增加视频下载能力。
-- 把 Vide Download 项目的下载逻辑迁移到另一个代码库。
-- 修复 yt-dlp 下载边界、平台识别、cookie 错误分类、JSON 输出格式。
+- 给桌面端、Web 后端或自动化工具增加视频下载功能。
+- 统一下载任务的成功/失败返回格式。
+- 处理平台识别、cookies、字幕、播放列表误展开等常见问题。
+- 快速得到一个可运行的 Python 下载器，再按项目需要嵌入。
 
 **怎么触发**
 
 ```text
-用 vide-download-project 帮我实现一个视频下载模块
-把这个项目的视频下载能力接入 yt-dlp
-修一下下载失败时 cookies 过期的错误分类
+用 VidGrab 帮我实现一个视频下载模块
+给这个项目接入 yt-dlp 下载功能
+修一下视频下载 cookies 失效时的错误分类
 给现有 downloader 加平台识别和 JSON 返回
 ```
 
@@ -78,7 +80,7 @@ python -m pip install -U yt-dlp
 
 **文件入口**
 
-→ [SKILL.md](./vide-download-project/SKILL.md) · [实现指南](./vide-download-project/references/implementation-guide.md) · [平台表](./vide-download-project/references/platforms.md) · [下载脚本](./vide-download-project/scripts/video_downloader.py)
+→ [SKILL.md](./VidGrab/SKILL.md) · [实现指南](./VidGrab/references/implementation-guide.md) · [平台表](./VidGrab/references/platforms.md) · [下载脚本](./VidGrab/scripts/video_downloader.py)
 
 ---
 

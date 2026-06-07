@@ -1,13 +1,13 @@
 ---
-name: vide-download-project
-description: Reusable video download implementation skill distilled from the Vide Download project. Use when Codex needs to build, port, or repair core video download capability with yt-dlp, platform detection, caller-provided cookies.txt support, JSON results, and retry/error classification.
+name: vidgrab
+description: Build, integrate, or repair video downloading features with yt-dlp, platform detection, caller-provided cookies.txt support, subtitle handling, normalized JSON results, and stable error classification.
 ---
 
-# Vide Download Project
+# VidGrab
 
 ## Purpose
 
-Use this skill to implement the download capability from the Vide Download project in another codebase. Recreate only the download domain: URL platform detection, optional caller-provided cookies, normalized JSON results, and error codes.
+Use this skill to implement a focused video downloader. Cover URL platform detection, optional caller-provided cookies, yt-dlp configuration, subtitle handling, normalized JSON results, and stable error codes.
 
 ## Use The Bundled Resources
 

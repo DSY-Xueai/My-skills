@@ -1,4 +1,0 @@
-interface:
-  display_name: "Vide Download"
-  short_description: "Implement portable video downloading with yt-dlp, cookies, and JSON results."
-  default_prompt: "Use $vide-download-project to implement a portable video download feature."
