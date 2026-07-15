@@ -1,6 +1,6 @@
 <div align="center">
 
-#  DSY Skills
+#  My Skills
 
 #### 可安装到 Codex、Claude Code 等 Agent 里的 Skill 集合。
 
